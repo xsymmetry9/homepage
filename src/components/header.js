@@ -24,6 +24,7 @@ export default class Header{
 
         const menuButton = () =>{
             const button = document.createElement("button");
+            button.classList.add("menu-btn");
             button.textContent = "menu";
 
             return button;
@@ -31,7 +32,13 @@ export default class Header{
     
         const navigation = () => {
             const container = document.createElement("nav");
-         
+            if(window.innerWidth > 880)
+            {
+                container.setAttribute("aria-hidden", false);
+            }
+            else{
+                container.setAttribute("aria-hidden", true);
+            }
             
             const lists = () => {
                 const unOrderedList = document.createElement("ul");
@@ -51,7 +58,6 @@ export default class Header{
         headerContainer.appendChild(title("Gary", "Lei"));
         headerContainer.appendChild(menuButton());
         headerContainer.appendChild(navigation());
-
 
         element.appendChild(headerContainer);
     

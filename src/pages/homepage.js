@@ -4,6 +4,7 @@ import banner from "./banner.js";
 import work from "./work.js";
 import about from "./about.js";
 import contact from "./contact.js";
+import eventHandlers from "../components/eventHandlers.js";
 
 export default class HomePage {
     static loadPage = () =>{
@@ -11,6 +12,9 @@ export default class HomePage {
         body.appendChild(header.loadHeader());
         body.appendChild(this.loadContent());
         body.appendChild(footer.loadFooter());
+
+        eventHandlers.loadeHandlers();
+
     }
 
     static loadContent = () =>{
