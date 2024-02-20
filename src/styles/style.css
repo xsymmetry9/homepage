@@ -224,17 +224,27 @@ header{
     font-size: 1.2rem;
     line-height: 1.5;
     padding: 3rem .6rem;
+
 }
 .imageDescription-container{
     display: flex;
-    max-width: 1000px;
+    justify-content: center;
+    max-width: 1100px;
     width: 100%;
     align-items: center;
     margin-inline: auto;
     margin-top: 3rem;
     padding-bottom: 3rem;
 }
+
+@media (max-width: 55em) {
+    .imageDescription-container{
+        flex-wrap: wrap;
+
+    }
+}
 .profile-picture{
+    padding-left: 1.2rem;
     width: 400px;
     height: auto;
 }
