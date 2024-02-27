@@ -22,8 +22,8 @@ export default class HomePage {
         content.classList.add("content-container");
 
         content.appendChild(banner.load());
-        content.appendChild(work.load());
         content.appendChild(about.load());
+        content.appendChild(work.load());
         content.appendChild(contact.load());
 
         return content;

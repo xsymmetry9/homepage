@@ -3,13 +3,13 @@ import profilePicture from "../images/profilePicture.png";
 export default class About{
     static load = () =>{
         const container = document.createElement("div");
-        container.classList.add("section-container");
+        container.classList.add("section-container","about-background");
         container.setAttribute("id", "about");
 
         container.appendChild(this.title());
 
         const imageDescription = document.createElement("div");
-        imageDescription.classList.add("imageDescription-container")
+        imageDescription.classList.add("imageDescription-container");
         imageDescription.appendChild(this.loadImage());
         imageDescription.appendChild(this.personalDescription());
 
