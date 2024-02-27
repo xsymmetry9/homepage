@@ -19,6 +19,13 @@ header{
     width: 100%;
     background: rgba(25, 25, 25, 0.3);
 }
+h2{
+    font-size: 3.2rem;
+}
+
+p{
+    font-size: 1.2rem;
+}
 
 *[aria-hidden = true]{
     display: none;
@@ -245,6 +252,8 @@ header{
 }
 
 .contact-container{
+    --spacing-big: 3rem;
+    margin-top: var(--spacing-big);
     display: flex;
     gap: 12px;
 }
@@ -280,4 +289,22 @@ header{
 .social-media-links{
     text-decoration: none;
     color: inherit;
+}
+
+.left-container{
+    --spacing-1: 1rem;
+    padding: 0 var(--spacing-1);
+}
+
+.left-container h2{
+    --spacing-2: 1.2rem;
+    padding-bottom: 1.12rem;
+}
+.left-container .contact-subtitle{
+    --spacing-1: 1rem;
+    padding-bottom: var(--spacing-1);
+}
+
+.right-container{
+    padding: 0 12px;
 }

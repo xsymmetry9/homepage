@@ -9,20 +9,22 @@ export default class Contact{
         container.classList.add("contact-container");
         container.setAttribute("id", "contact");
   
-        const right = document.createElement("div");
-        right.appendChild(this.title());
-        right.appendChild(this.content(contact));
-
         const left = document.createElement("div");
-        left.appendChild(this.plotImage());
+        left.classList.add("left-container");
+        left.appendChild(this.title());
+        left.appendChild(this.content(contact));
 
-        container.appendChild(right);
+        const right = document.createElement("div");
+        right.classList.add("right-container");
+        right.appendChild(this.plotImage());
+        
         container.appendChild(left);
+        container.appendChild(right);
         return container;
     }
 
     static title = () =>{
-        const title = document.createElement("h1");
+        const title = document.createElement("h2");
         title.textContent = "Contact";
         return title;
     }
@@ -42,6 +44,7 @@ export default class Contact{
     static content = (contact) =>{
         const container = document.createElement("div");
         const subTitle = document.createElement("p");
+        subTitle.classList.add("contact-subtitle");
         subTitle.textContent = "Please get in touch if you think our work could be mutually beneficial.";
         
         const plotContactInfo = () => {
