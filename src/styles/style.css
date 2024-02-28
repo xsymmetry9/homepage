@@ -1,6 +1,8 @@
 :root{
+    --primary-font: 'Poppins', sans-serif;
     --primary-color-dark: #000;
     --primary-color-light: #fff;
+    --view-small: 55em;
 }
 *{
     padding: 0;
@@ -11,6 +13,7 @@ html{
 }
 body{
     background-color: var(--primary-color-dark);
+    font-family: var(--primary-font);
 } 
 /* Header */
 header{
@@ -20,7 +23,10 @@ header{
     background: rgba(25, 25, 25, 0.3);
 }
 h2{
-    font-size: 3.2rem;
+    font-size: 2.6rem;
+}
+h3{
+    font-size: 1.9rem;
 }
 
 p{
@@ -30,6 +36,11 @@ p{
 *[aria-hidden = true]{
     display: none;
 }
+
+.hidden{
+    display: none;
+}
+
 .sticky{
     position: sticky;
     top: 0;
@@ -135,7 +146,20 @@ p{
 }
 
 /* Banner */
+.banner-title{
+    font-size: 7rem;
+    line-height: 1.5;
+}
+@media (max-width: 55em){
+    .banner-title{
+        font-size: 5.5rem;
+    }
+}
+.subtitle{
+    font-size: 1.6rem;
+}
 .banner-container{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -145,8 +169,13 @@ p{
     width: 100%;
 }
 
-.hidden{
-    display: none;
+.banner-btn-nav-about
+{
+    cursor: pointer;
+    position: absolute;
+    bottom: 3rem;
+    font-size: 1.2rem;
+    padding: 12px;
 }
 
 .section-container{
@@ -163,7 +192,12 @@ p{
 
 /* About */
 .about-background{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: var(--primary-color-dark);
+    height: 100vh;
 }
 .about-description{
     color: var(--primary-color-dark);
@@ -197,6 +231,32 @@ p{
 }
 /* Work */
 
+.top-container{
+    display: flex;
+    justify-content: space-between;
+}
+.mdi-icons{
+    height: 1.9rem;
+    width: 1.9rem;
+    fill: var(--primary-color-light);
+    background-color: inherit;
+}
+.mdi-icons:hover, .mdi-icons:active{
+    fill: blue;
+}
+
+.link-file-container{
+    display: flex;
+    justify-content: flex-end;
+    gap: .3rem;
+}
+.link-file-container{
+    list-style: none;
+}
+.link-file-container a{
+    cursor: pointer;
+    text-decoration: none;
+}
 .project-container{
     display: flex;
     flex-direction: column;
@@ -204,9 +264,10 @@ p{
 }
 
 .title-name{
-    margin-top: 3rem;
-    padding-left: .6rem;
+    --spacing: 1.2rem;
+    padding-bottom: var(--spacing);
 }
+
 .project-cards{
     display: grid;
     gap: 1.2rem;
@@ -275,8 +336,15 @@ p{
     gap: 16px;
     padding-top: 12px;
 }
+@media (max-width: 55em)
+{
+    .social-media-icons-container{
+        justify-content: center;
+    }
+}
 .social-media-icons{
     list-style: none;
+    padding-bottom: 3rem;
 }
 .social-media-icons-links{
     cursor: pointer;
