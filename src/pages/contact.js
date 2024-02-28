@@ -1,5 +1,6 @@
 
 // import phone from "../images/phone.svg";
+import plotSocialMediaIcons from "../components/socialMediaIcons";
 import contactImg from "../images/contact.jpg";
 
 export default class Contact{
@@ -74,28 +75,9 @@ export default class Contact{
             return container;
         }
 
-        const plotSocialMediaIcons = () =>{
-
-            const container = document.createElement("div");
-            container.innerHTML = `
-            <ul class="social-media-icons-container">
-                <li class="social-media-icons">
-                    <a href="www.github.com" target="_blank" class="social-media-links"><i class="devicon devicon-github-original"></i></a>
-                </li>
-                <li class="social-media-icons">
-                    <a href="www.twitter.com" target="_blank" class="social-media-links"><i class="devicon devicon-twitter-original"></i></a>
-                </li>
-                <li class="social-media-icons">
-                    <a href="www.linkedin.com" target="_blank" class="social-media-links"><i class="devicon devicon-linkedin-plain"></i></a>
-                </li>
-            </ul>
-            `
-
-            return container;
-        } 
         container.appendChild(subTitle);
         container.appendChild(plotContactInfo());
-        container.appendChild(plotSocialMediaIcons());
+        container.appendChild(plotSocialMediaIcons("contact"));
 
         return container;
     }
