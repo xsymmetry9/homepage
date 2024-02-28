@@ -173,7 +173,7 @@ p{
 {
     cursor: pointer;
     position: absolute;
-    bottom: 3rem;
+    bottom: 5rem;
     font-size: 1.2rem;
     padding: 12px;
 }
@@ -183,12 +183,6 @@ p{
     max-width: 1440px;
 }
 
-.section-title{
-    font-size: 3rem;
-    margin-top: 3rem;
-    padding: 0 0 1.2rem .6rem;
-    border-bottom: 3px solid lightblue;
-}
 
 /* About */
 .about-background{
@@ -197,7 +191,8 @@ p{
     justify-content: center;
     align-items: center;
     background: var(--primary-color-dark);
-    height: 100vh;
+
+    /* height: 100vh; */
 }
 .about-description{
     color: var(--primary-color-dark);
