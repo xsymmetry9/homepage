@@ -1,8 +1,8 @@
 const plotSocialMediaIcons = (className) =>{
 
-    const container = document.createElement("div");
+    const container = document.createElement("ul");
+    container.className =  `social-media-icons-container`;
     container.innerHTML = `
-    <ul class="social-media-icons-container ${className}">
         <li class="social-media-icons">
             <a href="www.github.com" target="_blank" class="social-media-links"><i class="devicon devicon-github-original"></i></a>
         </li>
@@ -12,8 +12,7 @@ const plotSocialMediaIcons = (className) =>{
         <li class="social-media-icons">
             <a href="www.linkedin.com" target="_blank" class="social-media-links"><i class="devicon devicon-linkedin-plain"></i></a>
         </li>
-    </ul>
-    `
+    `;
     return container;
 } 
 
