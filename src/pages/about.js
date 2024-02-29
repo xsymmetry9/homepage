@@ -8,10 +8,9 @@ export default class About{
         container.setAttribute("id", "about");
 
         const imageDescription = document.createElement("div");
-        imageDescription.classList.add("imageDescription-container");
+        imageDescription.className ="imageDescription-container";
         imageDescription.appendChild(this.loadImage());
         imageDescription.appendChild(this.personalDescription());
-
         container.appendChild(imageDescription);
         return container;
     }

@@ -26,7 +26,7 @@ export default class Contact{
 
     static title = () =>{
         const title = document.createElement("h2");
-        title.textContent = "Contact";
+        title.textContent = "Contact Me";
         return title;
     }
 

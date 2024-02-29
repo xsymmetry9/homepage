@@ -5,16 +5,16 @@ import weatherAppImg from '../images/weather-app.png'
 
 const projects = [
     {name: "Weather App", 
-    description: "A Tic Tac Toe project implemented with HTML, CSS, and JavaScript. Players take turns marking squares in a 3x3 grid to get three in a row horizontally, vertically, or diagonally. CSS styles the game layout, while JavaScript handles game logic such as checking for wins and switching between player turns.", 
+    description: "A short description. Just a couple of sentences will do.", 
     image: weatherAppImg, language: "HTML, JS, CSS", website: "https://xsymmetry9.github.io/weather-app/", github: "https://github.com/xsymmetry9/weather-app"},
     {name: "Todo List", 
-    description: "A Tic Tac Toe project implemented with HTML, CSS, and JavaScript. Players take turns marking squares in a 3x3 grid to get three in a row horizontally, vertically, or diagonally. CSS styles the game layout, while JavaScript handles game logic such as checking for wins and switching between player turns.", 
+    description: "A short description. Just a couple of sentences will do.", 
     image: todolistImg, language: "HTML, JS, CSS", website: "https://xsymmetry9.github.io/todolist/", github: "https://github.com/xsymmetry9/todolist"},
     {name: "Memory", 
-    description: "A Tic Tac Toe project implemented with HTML, CSS, and JavaScript. Players take turns marking squares in a 3x3 grid to get three in a row horizontally, vertically, or diagonally. CSS styles the game layout, while JavaScript handles game logic such as checking for wins and switching between player turns.", 
+    description: "A short description. Just a couple of sentences will do.", 
     image: memoryImg, language: "HTML, JS, CSS", website: "https://xsymmetry9.github.io/memory/", github: "https://github.com/xsymmetry9/memory"},
     {name: "CV Maker", 
-    description: "A Tic Tac Toe project implemented with HTML, CSS, and JavaScript. Players take turns marking squares in a 3x3 grid to get three in a row horizontally, vertically, or diagonally. CSS styles the game layout, while JavaScript handles game logic such as checking for wins and switching between player turns.", 
+    description: "A short description. Just a couple of sentences will do.", 
     image: cvMakerImg, language: "HTML, JS, CSS", website: "https://loquacious-paprenjak-b23565.netlify.app/", github: "https://github.com/xsymmetry9/cv-maker"},
 ];
 
@@ -24,16 +24,21 @@ export default class Work{
         container.classList.add("section-container");
         container.setAttribute("id", "work");
 
-    
-        container.appendChild(this.title());
-        container.appendChild(this.projects());
+
+        const content = document.createElement("div");
+        content.className = "content";
+
+        content.appendChild(this.title());
+        content.appendChild(this.projects());
+
+        container.appendChild(content);
         return container;
     }
 
     static title = () =>{
         const title = document.createElement("h2");
-        title.classList.add("section-title");
-        title.textContent = "Work";
+        title.classList.add("work-title");
+        title.textContent = "My Work";
 
         return title;
     }
@@ -44,15 +49,13 @@ export default class Work{
         createElement.classList.add("project-container");
         projects.forEach((item) =>{
 
-            const container = document.createElement("div");
-
             const projectCards = document.createElement("div");
             projectCards.classList.add("project-cards")
             projectCards.innerHTML = `
-                <div class="project-left">
+                <div class="project-top">
                     <img class="project-image" src="${item.image}" alt="An image of ${item.name}" />
                 </div>
-                <div class="project-right">
+                <div class="project-bottom">
                     <div class="top-container">
                         <h3 class="title-name">${item.name}</h3>
 
@@ -75,9 +78,8 @@ export default class Work{
                     
                 </div>`;
 
-                container.appendChild(projectCards);
 
-                createElement.appendChild(container);
+                createElement.appendChild(projectCards);
         });
 
         return createElement;
