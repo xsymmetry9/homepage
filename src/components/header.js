@@ -43,10 +43,10 @@ export default class Header{
             const lists = () => {
                 const unOrderedList = document.createElement("ul");
                 unOrderedList.classList.add("nav-container");
-                 const tabs = [{page: "about", link: "#about"}, {page: "work", link: "#work"}, {page: "contact", link: "#contact"}]
+                 const tabs = [{page: "about", link: "about"}, {page: "work", link: "work"}, {page: "contact", link: "contact"}]
                  tabs.forEach((item) =>{
                     const list = document.createElement("li");
-                    list.innerHTML = `<a class="nav-links" href="${item.link}">${item.page}</a>`;
+                    list.innerHTML = `<a class="nav-links">${item.page}</a>`;
                     unOrderedList.appendChild(list);
                  });
     
