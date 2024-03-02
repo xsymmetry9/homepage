@@ -3,6 +3,7 @@ export default class Handlers {
     static loadeHandlers = () =>{
         this.menuBtnHandler();
         this.navigationHandler();
+        this.navigationSectionHandler();
     }
 
     static menuBtnHandler = () =>{
@@ -11,11 +12,14 @@ export default class Handlers {
         const navigationPage = document.querySelector("nav");
             
         const handler = () =>{
-
-            if(navigationPage.getAttribute("aria-hidden") === "false" ?  navigationPage.setAttribute("aria-hidden", "true") : navigationPage.setAttribute("aria-hidden", "false"));
-
+            if(navigationPage.getAttribute("aria-hidden") === "false") {
+                navigationPage.setAttribute("aria-hidden", "true");
+                menu.textContent = "menu";
+            } else{
+                navigationPage.setAttribute("aria-hidden", "false");
+                menu.textContent = "close";
+            }   
         }
-
         menu.addEventListener(("click"), handler);
     
     }
@@ -30,10 +34,24 @@ export default class Handlers {
             } else {
                 navigationPage.setAttribute("aria-hidden", "true");
             }
-        });
-
-       
+        });   
     }
+
+    static scrollToSection = (name) => {
+        const section = document.getElementById(name);
+        section.scrollIntoView({behavior: "smooth"});
+    }
+
+    static navigationSectionHandler = () =>{
+
+        const navBtn = (e) =>{
+            const section = e.currentTarget.textContent;
+            this.scrollToSection(section);
+        }
+        const nav = document.querySelectorAll(".nav-links");
+        nav.forEach((item) => item.addEventListener(("click"), navBtn))
+    }
+
     
 }
 
