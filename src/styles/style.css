@@ -46,6 +46,8 @@ p{
 .sticky{
     position: sticky;
     top: 0;
+    background: rgba(25, 25, 25, 0.7);
+    z-index: 20;
 }
 
 .header-container{
@@ -60,6 +62,12 @@ p{
     align-items: center;
     margin-inline: auto;
 }
+@media (max-width: 55em)
+{
+    .header-container{
+        background: rgba(25, 25, 25, 0.7);
+    }
+}
 
 .title-logo{
     padding: 12px 12px;
@@ -73,26 +81,27 @@ p{
 }
 
 
-.nav-container > li{
-  font-size: inherit;
-  color: inherit;
-}
-
-.nav-container > li > a{
-    font-weight: 700;
+.nav-links{
     color: var(--primary-color-light);
+    font-weight: 700;
     text-decoration: none;
+    cursor: pointer;
+    font-size: inherit;
 }
-
+.nav-links:hover, .nav-links:focus{
+    color: rgba(250,250,250,.7);
+}
 .menu-btn{
+    font-weight: 600;
+    font-size: .9rem;
+    text-transform: uppercase;
     cursor: pointer;
     display: none;
     position: absolute;
-    top: .5rem;
+    top: .77rem;
     right: .5rem;
-    z-index: 10000;
-
-    background-color: orange;
+    z-index: 100;
+    background-color: var(--primary-color-light);
     border: none;
     border-radius: 5px;
     padding: 6px 12px;
@@ -160,7 +169,6 @@ p{
     font-size: 1.6rem;
 }
 .banner-container{
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -169,11 +177,10 @@ p{
     max-width: 1440px;
     width: 100%;
 }
-
 .banner-btn-nav-about
 {
+    margin-top: 10rem;
     cursor: pointer;
-    position: absolute;
     bottom: 5rem;
     font-size: 1.2rem;
     height: 40px;
@@ -182,11 +189,14 @@ p{
     background: none;
     border: 2px solid var(--primary-color-light);
     border-radius: 50%;
-    
 }
 
 .banner-btn-nav-about:hover, .banner-btn-nav-about:focus{
-    transform: scale(120%);
+    animation: rotate infinite .5s linear;
+}
+@keyframes rotate{
+    0%{transform:rotate(0deg) scale(1.2)};
+    100%{transform: rotate(360deg) scale(1.2);}
 }
 
 
@@ -197,14 +207,11 @@ p{
     display: block;
 }
 .about-background{
-    position: relative;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: var(--primary-color-light);
-    /* outline: 3px solid blue; */
 
     height: 100vh;
 }
@@ -227,7 +234,7 @@ p{
     margin-inline: auto;
     margin-top: 3rem;
     padding-bottom: 3rem;
-    z-index: 100;
+    z-index: 0;
     
 }
 .imageDescription-container::before{
@@ -235,7 +242,7 @@ p{
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: -100;
+    z-index: -10;
  
     background-color: var(--primary-color-dark);
     
@@ -417,4 +424,13 @@ p{
 
 .right-container{
     padding: 0 12px;
+}
+
+.carousel{
+    display: flex;
+    gap: 5px;
+}
+.skill-icon{
+    width: 100px;
+    height: 100px;
 }
