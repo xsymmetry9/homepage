@@ -1,44 +1,53 @@
+const typeWriter = (title, element) =>{
+
+    for (let i = 0; i <= title.length; i++) {
+        if(i != title.length)
+        {
+            setTimeout(() => {
+                element.innerHTML = title.slice(0, i) + title.charAt(i) + `<span class="blink">|</span>`;
+            }, i * 100 + (Math.random() * 100));
+        } else {
+            setTimeout(() => {
+                element.innerHTML = title;
+            }, i * 100 + (Math.random() * 150));
+        }
+    }
+
+}
 export default class Banner{
     static load = () =>{
         const container = document.createElement("div");
         container.classList.add("banner-container");
 
-        container.appendChild(this.title());
-        container.appendChild(this.subText());
-        container.appendChild(this.bannerHandlerBtn());
+        setTimeout(() =>{
+            container.appendChild(this.title())
+        }, 500);
+        setTimeout(() =>{
+            container.appendChild(this.subText());
+        }, 3000);
+        setTimeout(() =>{
+            container.appendChild(this.bannerHandlerBtn());
+        }, 6000);
 
         return container;
     }
 
     static title = () =>{
-        const text = document.createElement("h1");
-        text.classList.add("banner-title")
-        text.textContent = "Gary Lei";
-        return text;
+        const title = "Hi, my name is Gary";
+        const titleText = document.createElement("h1");
+        titleText.className = "banner-title";
+
+         typeWriter(title, titleText);
+
+        return titleText;
     }
+
     static subText = () =>{
         const subtitle = "A web developer and an ESL teacher"
         const text = document.createElement("p");
         text.classList.add("typeWriter", "subtitle");
-
-        let index = 0;
-
-        const typeWriter = () =>{
-            if(index < subtitle.length){
-                text.innerHTML += subtitle.charAt(index);
-                index++;
-                setTimeout(typeWriter, 200)    
-            } else {
-                setTimeout(resetIndex, 3000);
-            }
-        }
-
-        const resetIndex = () =>{
-            text.innerHTML = "" //clear the title
-            index = 0;
-            typeWriter(); //Start typewrite effect again
-        }
-        typeWriter();
+        
+        typeWriter(subtitle, text);
 
         return text;
     }
