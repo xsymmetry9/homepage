@@ -44,7 +44,7 @@ export default class About{
         const image = new Image();
         image.src = profilePicture;
         image.alt = "A portrait for me";
-        image.classList.add("profile-picture");
+        image.className = "profile-picture";
         return image;
     }
 }
