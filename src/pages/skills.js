@@ -66,12 +66,16 @@ export default class Skills{
         const container = document.createElement("div");
         container.className = "carousel";
 
+        const itemsHolder = document.createElement("div");
+        itemsHolder.className = "carousel-items";
+
         icons.forEach((item) =>{
             const box = document.createElement("div");
             box.innerHTML = `${item}`;
-            container.appendChild(box);
+            itemsHolder.appendChild(box);
         });
-        console.log(container.getBoundingClientRect());
+
+        container.appendChild(itemsHolder);
     
         return container;
     }

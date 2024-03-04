@@ -263,12 +263,13 @@ p{
     max-width: 1000px;
     width: 100%;
     margin-inline: auto;
-    display: flex;
     overflow-x: hidden;
-    gap: 16px;
     border: 10px solid green;
-
-    /* transform: translateX(100px); */
+}
+.carousel-items{
+    display: flex;
+    gap: 15px;
+    /* transform: translateX(-55%); */
 }
 .skill-icon{
     width: 100px;
