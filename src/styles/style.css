@@ -9,6 +9,7 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 html{
     scroll-behavior: smooth;
@@ -25,10 +26,12 @@ header{
     background: rgba(25, 25, 25, 0.3);
 }
 h2{
-    font-size: 2.6rem;
+    font: 3rem sans-serif;
+    font-weight: 700;
 }
 h3{
-    font-size: 1.9rem;
+    font: 2rem sans-serif;
+    font-weight: 700;
 }
 
 p{
@@ -256,24 +259,72 @@ p{
 }
 
 /*Skills */
+:root{
+    --total-brand: 12;
+    --logo-width: 12rem;
+    --total-logo-width: calc(var(--total-brand) * var(--logo-width) * 2);
+}
 
-.carousel{
-    box-sizing: border-box;
-    padding: 1.2rem 0;
-    max-width: 1000px;
-    width: 100%;
-    margin-inline: auto;
-    overflow-x: hidden;
-    border: 10px solid green;
+.skill-title{
+    text-align: center;
 }
-.carousel-items{
+
+.slider{
+    position: relative;
+    height: 20rem;
+    background-color: #fff;
+    box-shadow: 0.8rem 1.4rem -.2rem #0001;
+    
     display: flex;
-    gap: 15px;
-    /* transform: translateX(-55%); */
+    align-items: center;
+
+    overflow: hidden;
 }
+
+.slider::before,
+.slider::after{
+    position: absolute;
+    content: "";
+
+    height: 100%;
+    width: var(--logo-width);
+}
+.slider::before{
+    left: 0;
+    background: linear-gradient(to right, #fff 0%,#0000 100%);
+}
+.slider::after{
+    right: 0;
+    background: linear-gradient(to left, #fff 0%,#0000 100%);
+}
+
+.slider ul.brands{
+    list-style: none;
+    width: var(--total-logo-width);
+    display: flex;
+
+    animation: slideLeft 12s linear infinite;
+}
+.slider:hover ul.brands{
+    animation-play-state: paused;
+}
+
+@keyframes slideLeft {
+    100%{
+        transform: translateX(calc(-100% / 2));
+    }
+}
+
+ul.brands li.brand-logo{
+    width: var(--logo-width);
+    font-size: 2rem;
+    text-align: center;
+    margin-left: 3rem
+}
+
 .skill-icon{
-    width: 100px;
     height: 100px;
+    /* margin: 0 30px; */
 }
 
 /* Work */
@@ -286,9 +337,8 @@ p{
 }
 
 .work-title{
-    width: 190px;
-    padding: 0 1.2rem;
-    border-bottom: .3rem solid blue;
+    text-align: center;
+    padding-bottom: 3rem;
 }
 
 .top-container{

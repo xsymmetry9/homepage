@@ -48,7 +48,7 @@ export default class Skills{
         content.className = "content";
 
         content.appendChild(this.title());
-        content.appendChild(this.carousel());
+        content.appendChild(this.slider());
 
         container.appendChild(content);
         return container;
@@ -62,20 +62,26 @@ export default class Skills{
         return title;
     }
 
-    static carousel = () =>{
+    static slider = () =>{
         const container = document.createElement("div");
-        container.className = "carousel";
+        container.className = "slider";
 
-        const itemsHolder = document.createElement("div");
-        itemsHolder.className = "carousel-items";
+        const brands = () =>{
+            const itemsHolder = document.createElement("ul");
+            itemsHolder.className = "brands";
 
-        icons.forEach((item) =>{
-            const box = document.createElement("div");
-            box.innerHTML = `${item}`;
-            itemsHolder.appendChild(box);
-        });
+            icons.forEach((item) =>{
+                const list = document.createElement("li");
+                list.className = "brand-logo";
+                list.innerHTML = `${item}`;
+                itemsHolder.appendChild(list);
+            });
+      
 
-        container.appendChild(itemsHolder);
+            return itemsHolder;
+        }
+
+        container.appendChild(brands());
     
         return container;
     }
