@@ -16,6 +16,7 @@ const projects = [
     {name: "CV Maker", 
     description: "A short description. Just a couple of sentences will do.", 
     image: cvMakerImg, language: "HTML, JS, CSS", website: "https://loquacious-paprenjak-b23565.netlify.app/", github: "https://github.com/xsymmetry9/cv-maker"},
+    {name: "A website", description: "A website about cars.", image: "", language: "HTML, JS, CSS", website: "https://xsymmetry9.github.io/car-wash/", github: "https://github.com/xsymmetry9/car-wash"}
 ];
 
 export default class Work{
