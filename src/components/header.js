@@ -16,22 +16,32 @@ export default class Header{
         window.addEventListener("scroll", handleScroll);
     
         const title = (fName, lName) =>{
-            const text = document.createElement("p");
-            text.textContent = fName + " " +lName;
-            text.classList.add("title-logo");
-            return text;
+            const box = document.createElement("div");
+            box.className = "title-logo";
+            box.innerHTML = `
+                <a href="/"><span>${fName} ${lName}</span></a>`;
+            return box;
         }
 
         const menuButton = () =>{
             const button = document.createElement("button");
             button.classList.add("menu-btn");
-            button.textContent = "menu";
-
+            button.setAttribute("aria-controls", "primary-navigation");
+            button.setAttribute("aria-expanded", false);
+            button.innerHTML = `
+                <svg fill="var(--button-color)" class ="hamburger" viewBox ="0 0 100 100" width ="42" height = "42">
+                    <rect class ="line top" width ="80" height="6" x="10" y="30" rx="5">
+                    </rect>
+                    <rect class ="line middle" width ="80" height="6" x="10" y="50" rx="5">
+                    </rect>
+                    <rect class ="line bottom" width ="80" height="6" x="10" y="70" rx="5"></rect>
+                </svg>`
             return button;
         }
     
         const navigation = () => {
             const container = document.createElement("nav");
+            container.className = "primary-navigation";
             if(window.innerWidth > 880)
             {
                 container.setAttribute("aria-hidden", false);

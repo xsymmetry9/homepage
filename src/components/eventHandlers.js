@@ -25,11 +25,14 @@ export default class Handlers {
             
         const handler = () =>{
             if(navigationPage.getAttribute("aria-hidden") === "false") {
+                menu.setAttribute("aria-hidden", "true");
                 navigationPage.setAttribute("aria-hidden", "true");
-                menu.textContent = "menu";
+                navigationPage.classList.add("hidden");
             } else{
                 navigationPage.setAttribute("aria-hidden", "false");
-                menu.textContent = "close";
+                menu.setAttribute("aria-hidden", "false");
+
+                navigationPage.classList.remove("hidden");
             }   
         }
         menu.addEventListener(("click"), handler);
@@ -37,14 +40,19 @@ export default class Handlers {
     }
 
     static navigationHandler = () =>{
+        const menuBtn = document.querySelector(".menu-btn");
         const navigationPage = document.querySelector("nav");
         window.addEventListener(("resize"), () =>{
             const width = window.innerWidth;
             if(width > 880)
             {
                 navigationPage.setAttribute("aria-hidden", "false");
+                menuBtn.setAttribute("aria-hidden", "true");
+                navigationPage.classList.remove("hidden");
             } else {
                 navigationPage.setAttribute("aria-hidden", "true");
+                navigationPage.classList.add("hidden");
+
             }
         });   
     }

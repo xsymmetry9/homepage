@@ -27,7 +27,7 @@ export default class Banner{
         }, 3000);
         setTimeout(() =>{
             container.appendChild(this.bannerHandlerBtn());
-        }, 6000);
+        }, 7000);
 
         return container;
     }
