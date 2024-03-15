@@ -15,11 +15,11 @@ export default class Header{
 
         window.addEventListener("scroll", handleScroll);
     
-        const title = (fName, lName) =>{
+        const title = (logoName) =>{
             const box = document.createElement("div");
             box.className = "title-logo";
             box.innerHTML = `
-                <a href="/"><span>${fName} ${lName}</span></a>`;
+                <a href="/"><span>${logoName}</span></a>`;
             return box;
         }
 
@@ -65,7 +65,7 @@ export default class Header{
             container.appendChild(lists());
             return container;
         }
-        headerContainer.appendChild(title("Gary", "Lei"));
+        headerContainer.appendChild(title("Go Gary!"));
         headerContainer.appendChild(menuButton());
         headerContainer.appendChild(navigation());
 
