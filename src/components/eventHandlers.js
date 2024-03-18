@@ -5,6 +5,7 @@ export default class Handlers {
         this.navigationHandler();
         this.navigationSectionHandler();
         this.sliderHandler();
+        this.mobileNavLinks();
     }
 
     static sliderHandler = () =>{
@@ -27,18 +28,17 @@ export default class Handlers {
             if(navigationPage.getAttribute("aria-hidden") === "false") {
                 menu.setAttribute("aria-hidden", "true");
                 navigationPage.setAttribute("aria-hidden", "true");
-                navigationPage.classList.add("hidden");
+                document.querySelector("nav").style ="display: none";
             } else{
                 navigationPage.setAttribute("aria-hidden", "false");
                 menu.setAttribute("aria-hidden", "false");
 
-                navigationPage.classList.remove("hidden");
+                document.querySelector("nav").style ="display: block";
             }   
         }
         menu.addEventListener(("click"), handler);
     
     }
-
     static navigationHandler = () =>{
         const menuBtn = document.querySelector(".menu-btn");
         const navigationPage = document.querySelector("nav");
@@ -48,11 +48,9 @@ export default class Handlers {
             {
                 navigationPage.setAttribute("aria-hidden", "false");
                 menuBtn.setAttribute("aria-hidden", "true");
-                navigationPage.classList.remove("hidden");
             } else {
                 navigationPage.setAttribute("aria-hidden", "true");
-                navigationPage.classList.add("hidden");
-
+                document.querySelector("nav").style ="display: none";
             }
         });   
     }
@@ -72,6 +70,19 @@ export default class Handlers {
         nav.forEach((item) => item.addEventListener(("click"), navBtn))
     }
 
-    
+    static mobileNavLinks = () =>{
+        const someName = () =>{
+            const menuBtn = document.querySelector(".menu-btn");
+            const primaryNavigation = document.querySelector(".primary-navigation");
+            primaryNavigation.setAttribute("aria-hidden", true);
+            menuBtn.setAttribute("aria-hidden", true);
+            document.querySelector("nav").style ="display: none";
+        }
+        const links = document.querySelectorAll(".nav-links");
+        links.forEach((item) =>{
+            item.addEventListener(("click"), someName);
+        })
+    }
 }
+
 

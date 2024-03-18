@@ -123,6 +123,9 @@ p{
     .title-logo{
         margin-top: 22.5px;
     }
+    .primary-navigation{
+        display: none;
+    }
 }
 /* Content */
 

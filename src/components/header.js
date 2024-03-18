@@ -65,6 +65,8 @@ export default class Header{
             container.appendChild(lists());
             return container;
         }
+
+
         headerContainer.appendChild(title("Go Gary!"));
         headerContainer.appendChild(menuButton());
         headerContainer.appendChild(navigation());
