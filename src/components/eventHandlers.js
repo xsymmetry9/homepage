@@ -77,16 +77,19 @@ export default class Handlers {
     }
 
     static mobileNavLinks = () =>{
-        const someName = () =>{
+        const closeNavigation = () =>{
             const menuBtn = document.querySelector(".menu-btn");
             const primaryNavigation = document.querySelector(".primary-navigation");
+            const width = window.innerWidth;
+            if(width > 880){
+                return;
+            }
             primaryNavigation.setAttribute("aria-hidden", true);
-            menuBtn.setAttribute("aria-hidden", true);
-            document.querySelector("nav").style ="display: none";
+            menuBtn.setAttribute("aria-expanded", false);
         }
         const links = document.querySelectorAll(".nav-links");
         links.forEach((item) =>{
-            item.addEventListener(("click"), someName);
+            item.addEventListener(("click"), closeNavigation);
         })
     }
 }
