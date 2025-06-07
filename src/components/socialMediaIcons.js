@@ -1,4 +1,4 @@
-const plotSocialMediaIcons = (className) =>{
+const plotSocialMediaIcons = () =>{
 
     const container = document.createElement("ul");
     container.className =  `social-media-icons-container`;
