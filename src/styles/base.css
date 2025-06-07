@@ -1,0 +1,24 @@
+:root {
+    --primary-font: 'Poppins', sans-serif;
+    --primary-color-dark: #000;
+    --primary-color-light: #fff;
+    --primary-fc-dark: #000;
+    --primary-bg-color-dark: var(--primary-color-dark);
+    --button-color: var(--primary-bg-color-dark);
+    --color-cyan: rgb(0, 247, 255);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--primary-color-light);
+    font-family: var(--primary-font);
+}
