@@ -29,10 +29,13 @@ export default class Header{
         const menuButton = () =>{
             const button = document.createElement("button");
             button.classList.add("menu-btn");
+            // Loads as default
             button.setAttribute("aria-controls", "primary-navigation");
+            button.setAttribute("aria-expanded", false);
+
+            // Sets the visibility depending on the mobile version
             const setVisibility = () => {
-                button.setAttribute("aria-hidden", window.innerWidth <= 800);
-                button.setAttribute("aria-expanded", false);
+                button.setAttribute("aria-hidden", window.innerWidth > 800);
             }
             setVisibility();
             button.innerHTML = `
@@ -55,12 +58,12 @@ export default class Header{
             container.setAttribute("aria-hidden", false);
             container.setAttribute("aria-expanded", true);
 
-            // const setVisibility = () =>{
-            //     container.setAttribute("aria-hidden", window.innerWidth <= 880);
-            //     container.setAttribute("aria-expanded", false);
-            // };
-            // setVisibility();
-            // window.addEventListener("resize", setVisibility); // This fixes for resize bug
+            const setVisibility = () =>{
+                container.setAttribute("aria-hidden", window.innerWidth <= 880);
+                // container.setAttribute("aria-expanded", !window.innerWidth <=880);
+            };
+            setVisibility();
+            window.addEventListener("resize", setVisibility); // This fixes for resize bug
                         
             const lists = () => {
                 const unOrderedList = document.createElement("ul");
