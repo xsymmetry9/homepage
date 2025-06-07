@@ -1,4 +1,6 @@
+// index.js
+
 import "../src/styles/style.css";
 import homePage from '../src/pages/homepage';
 
-addEventListener("DOMContentLoaded", homePage.loadPage())
+addEventListener("DOMContentLoaded", homePage.loadPage);
