@@ -1,6 +1,6 @@
 export default class Handlers {
 
-    static loadeHandlers = () =>{
+    static loadHandlers = () =>{
         this.menuBtnHandler();
         this.navigationHandler();
         this.navigationSectionHandler();
@@ -22,19 +22,21 @@ export default class Handlers {
     static menuBtnHandler = () =>{
 
         const menu = document.querySelector(".menu-btn");
-        const navigationPage = document.querySelector("nav");
+        const navigationPage = document.querySelector(".primary-navigation");
             
         const handler = () =>{
-            if(navigationPage.getAttribute("aria-hidden") === "false") {
-                menu.setAttribute("aria-hidden", "true");
-                navigationPage.setAttribute("aria-hidden", "true");
-                document.querySelector("nav").style ="display: none";
-            } else{
-                navigationPage.setAttribute("aria-hidden", "false");
-                menu.setAttribute("aria-hidden", "false");
 
-                document.querySelector("nav").style ="display: block";
-            }   
+            if(menu.getAttribute("aria-expanded") === "false"){
+                console.log("You have clicked this button when aria-expanded was false.  Now you changed it to true")
+                menu.setAttribute("aria-expanded", true);
+                navigationPage.setAttribute("aria-hidden", false);
+                navigationPage.setAttribute("aria-expanded", true);
+            } else {
+                console.log("You have clicked this button when aria-expanded was true.  Now you changed it to false")
+                menu.setAttribute("aria-expanded", false);
+                navigationPage.setAttribute("aria-hidden", true);
+                navigationPage.setAttribute("aria-expanded", false);
+            } 
         }
         menu.addEventListener(("click"), handler);
     
@@ -46,11 +48,15 @@ export default class Handlers {
             const width = window.innerWidth;
             if(width > 880)
             {
-                navigationPage.setAttribute("aria-hidden", "false");
-                menuBtn.setAttribute("aria-hidden", "true");
+                // if it's more than 880, the navigation should stay hidden until the hamburger button is clicked.
+                navigationPage.setAttribute("aria-hidden", "false"); //Disables mobile version
+                menuBtn.setAttribute("aria-hidden", true); //Hides the hamburger button.
+                menuBtn.setAttribute("aria-expanded", false); //Menu button sets to default
             } else {
                 navigationPage.setAttribute("aria-hidden", "true");
-                document.querySelector("nav").style ="display: none";
+                menuBtn.setAttribute("aria-hidden", false);
+                // menuBtn.setAttribute("aria-expanded", true); //Menu button sets to default
+
             }
         });   
     }
