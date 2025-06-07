@@ -1,7 +1,7 @@
 {
   "name": "homepage",
   "version": "1.0.0",
-  "description": "This is an assignment from the Odin Project",
+  "description": "This is my own website",
   "main": "index.js",
   "private": true,
   "scripts": {
