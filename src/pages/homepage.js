@@ -1,10 +1,10 @@
 import header from "../components/header.js";
 import footer from '../components/footer.js';
-import banner from "./banner.js";
-import work from "./work.js";
-import about from "./about.js";
-import skills from "./skills.js";
-import contact from "./contact.js";
+import banner from "../sections/banner.js";
+import work from "../sections/work.js";
+import about from "../sections/about.js";
+import skills from "../sections/skills.js";
+import contact from "../sections/contact.js";
 import eventHandlers from "../components/eventHandlers.js";
 
 export default class HomePage {
@@ -14,7 +14,7 @@ export default class HomePage {
         body.appendChild(this.loadContent());
         body.appendChild(footer.loadFooter());
 
-        eventHandlers.loadeHandlers();
+        eventHandlers.loadHandlers();
 
     }
 
