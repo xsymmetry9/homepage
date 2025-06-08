@@ -4,19 +4,20 @@ import todolistImg from "../assets/images/todolist.png";
 import weatherAppImg from "../assets/images/weather-app.png";
 
 const projects = [
-    {name: "Weather App", 
-    description: "A short description. Just a couple of sentences will do.", 
-    image: weatherAppImg, language: "HTML, JS, CSS", website: "https://xsymmetry9.github.io/weather-app/", github: "https://github.com/xsymmetry9/weather-app"},
+    {
+        name: "Weather App", 
+        description: "A simple app that searches through the api to find the city's weather forecast.  This project is from the Odin Project and it is used to practice and play around with the language that is being learned", 
+    image: weatherAppImg, language: "HTML, JS, CSS5", website: "https://xsymmetry9.github.io/weather-app/", github: "https://github.com/xsymmetry9/weather-app"},
     {name: "Todo List", 
-    description: "A short description. Just a couple of sentences will do.", 
-    image: todolistImg, language: "HTML, JS, CSS", website: "https://xsymmetry9.github.io/todolist/", github: "https://github.com/xsymmetry9/todolist"},
+    description: "A simple to do list app.  It can create projects and add tasks.  It can also check the income projects and it tells you when a project is do today.", 
+    image: todolistImg, language: "React, CSS5", website: "https://xsymmetry9.github.io/todolist/", github: "https://github.com/xsymmetry9/todolist"},
     {name: "Memory", 
-    description: "A short description. Just a couple of sentences will do.", 
-    image: memoryImg, language: "HTML, JS, CSS", website: "https://xsymmetry9.github.io/memory/", github: "https://github.com/xsymmetry9/memory"},
+    description: "A simple game and first game I have created. Continue to practice fetching datas and playing around with the objects I have received.  Also, it is a good practice to play around with data structure ", 
+    image: memoryImg, language: "React, CSS5", website: "https://xsymmetry9.github.io/memory/", github: "https://github.com/xsymmetry9/memory"},
     {name: "CV Maker", 
-    description: "A short description. Just a couple of sentences will do.", 
+    description: "My first practical project for a company that I worked for.  It facilitates teachers to create an evaluation form and render to a customized form and save as PDF or print it out.", 
     image: cvMakerImg, language: "HTML, JS, CSS", website: "https://loquacious-paprenjak-b23565.netlify.app/", github: "https://github.com/xsymmetry9/cv-maker"},
-    {name: "A website", description: "A website about cars.", image: "", language: "HTML, JS, CSS", website: "https://xsymmetry9.github.io/car-wash/", github: "https://github.com/xsymmetry9/car-wash"}
+    {name: "GEOS App", description: "My first practical project for a company that I worked for.  It facilitates teachers to create an evaluation form and render to a customized form and save as PDF or print it out.", image: "", language: "REACT, Tailwind, Typescript", website: "https://xsymmetry9.github.io/car-wash/", github: "https://github.com/xsymmetry9/car-wash"}
 ];
 
 export default class Work{
