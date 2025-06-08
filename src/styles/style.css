@@ -2,7 +2,8 @@
 @import './typography.css';
 @import './header.css';
 @import './navigation.css';
-
+@import './utility.css';
+@import './footer.css';
 
 /* Content */
 
@@ -136,10 +137,10 @@
     }
 }
 .profile-picture{
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     height: auto;
-    outline: 1px solid green;
-    box-shadow: 1px 2px 1px 1px rgba(25, 25, 25, 0.7);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.15); /* Soft white */
 }
 #about .social-media-icons-container{
     justify-content: flex-end;
@@ -223,11 +224,6 @@ ul.brands li.brand-logo{
     padding: 5rem 0;
 }
 
-.work-title{
-    text-align: center;
-    padding-bottom: 3rem;
-}
-
 .top-container{
     display: flex;
     justify-content: space-between;
@@ -239,7 +235,7 @@ ul.brands li.brand-logo{
     background-color: inherit;
 }
 .mdi-icons:hover, .mdi-icons:active{
-    fill: blue;
+    fill: var(--);
 }
 
 .link-file-container{
@@ -255,14 +251,16 @@ ul.brands li.brand-logo{
     text-decoration: none;
 }
 .project-container{
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 1440px;
-    margin-inline: auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 1.6rem;
     padding: 2rem 12px;
+}
+@media (max-width: 55em)
+{
+    .project-container{
+        grid-template-columns: 1fr;
+    }
 }
 
 .title-name{
@@ -272,9 +270,16 @@ ul.brands li.brand-logo{
 }
 
 .project-cards{
+    /* background-color: #1a1a1a; */
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transform: transform 0.3s ease;
     display: grid;
-    grid-template-rows: 1fr .7fr;
-    box-shadow: 2px 2px 3px 2px rgba(25, 25, 25, 0.3);
+    grid-template-rows: 1fr 250px;
+    border: 1px solid gray;
+    /* border-bottom: 5px solid black; */
+    box-shadow: 0px 5px 0px 0px rgba(25, 25, 25);
 }
 
 .project-image{
@@ -283,7 +288,7 @@ ul.brands li.brand-logo{
     object-fit: cover;
 }
 .project-bottom{
-    border-top: 1px solid black;
+    border-top: 3px solid black;
     padding: 1.2rem 1.2rem;
 
 }
@@ -294,6 +299,11 @@ ul.brands li.brand-logo{
 
 /* Contact */
 
+#contact{
+    h1, h2, h3, h4, h5, p{
+        color: var(--primary-color-light);
+    }
+}
 .contact-flex{
     display: flex;
     gap: 12px;
@@ -309,6 +319,9 @@ ul.brands li.brand-logo{
     gap: 12px;
 }
 
+.contact-title{
+    color: var(--primary-color-light);
+}
 @media (max-width: 55em)
 {
     .contact-container{
@@ -366,13 +379,7 @@ ul.brands li.brand-logo{
     padding: 0 12px;
 }
 
-/* footer */
-.footer-container{
-    background-color: var(--primary-color-dark);
-    color: var(--primary-color-light);
-    text-align: center;
-    padding: 1.2rem 0;
-}
+
 
 /*Components */
 
@@ -440,30 +447,3 @@ ul.brands li.brand-logo{
         }
     }
 
-
-.hidden{
-    display: none;
-}
-
-.sticky{
-    position: sticky;
-    top: 0;
-    background: rgba(25, 25, 25, 0.7);
-    z-index: 20;
-}
-
-.blink{
-    animation: customBlink 2s infinite ease;
-}
-
-@keyframes customBlink{
-    0%,
-    50%,
-    100%{
-        opacity: 1;
-    }
-    25%,
-    75%{
-        opacity: 0;
-    }
-}
