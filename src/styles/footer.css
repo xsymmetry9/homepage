@@ -1,0 +1,12 @@
+/* footer */
+footer {
+    h1, h2, h3, h4, h5, p {
+        color: var(--primary-color-light);
+    }
+}
+.footer-container{
+    background-color: var(--primary-color-dark);
+    color: var(--primary-color-light);
+    text-align: center;
+    padding: 1.2rem 0;
+}
