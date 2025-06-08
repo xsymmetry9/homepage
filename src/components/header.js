@@ -71,7 +71,7 @@ export default class Header{
                  const tabs = [{page: "about", link: "about"}, {page: "work", link: "work"}, {page: "contact", link: "contact"}]
                  tabs.forEach((item) =>{
                     const list = document.createElement("li");
-                    list.innerHTML = `<a href="#${item.page}" class="nav-links">${item.page}</a>`;
+                    list.innerHTML = `<a class="nav-links">${item.page}</a>`;
                     unOrderedList.appendChild(list);
                  });
     
