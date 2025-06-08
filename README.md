@@ -23,6 +23,7 @@ The goal of this project is to:
 - Modular file structure using Webpack for better scalability.
 
 ## Project Structure
+```
 homepage/
 ├── dist/ # Bundled output
 ├── src/ # Source files
@@ -31,6 +32,7 @@ homepage/
 │ └── index.js
 ├── webpack.config.js
 └── README.md
+```
 
 ## Installation
 ```bash
