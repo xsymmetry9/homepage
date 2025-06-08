@@ -1,0 +1,31 @@
+.two-columns{
+    display: flex;
+    justify-content: space-between;
+}
+
+.hidden{
+    display: none;
+}
+
+.sticky{
+    position: sticky;
+    top: 0;
+    background: rgba(25, 25, 25, 0.7);
+    z-index: 20;
+}
+
+.blink{
+    animation: customBlink 2s infinite ease;
+}
+
+@keyframes customBlink{
+    0%,
+    50%,
+    100%{
+        opacity: 1;
+    }
+    25%,
+    75%{
+        opacity: 0;
+    }
+}
