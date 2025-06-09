@@ -2,6 +2,7 @@ import cvMakerImg from "../assets/images/cv-maker.png";
 import memoryImg from "../assets/images/memory.png";
 import todolistImg from "../assets/images/todolist.png";
 import weatherAppImg from "../assets/images/weather-app.png";
+import geosApp from "../assets/images/geos_app.png";
 
 const projects = [
     {
@@ -17,7 +18,13 @@ const projects = [
     {name: "CV Maker", 
     description: "My first practical project for a company that I worked for.  It facilitates teachers to create an evaluation form and render to a customized form and save as PDF or print it out.", 
     image: cvMakerImg, language: "HTML, JS, CSS", website: "https://loquacious-paprenjak-b23565.netlify.app/", github: "https://github.com/xsymmetry9/cv-maker"},
-    {name: "GEOS App", description: "My first practical project for a company that I worked for.  It facilitates teachers to create an evaluation form and render to a customized form and save as PDF or print it out.", image: "", language: "REACT, Tailwind, Typescript", website: "https://xsymmetry9.github.io/car-wash/", github: "https://github.com/xsymmetry9/car-wash"}
+    {
+        name: "GEOS App",
+        description: "My first practical project for a company that I worked for.  It facilitates teachers to create an evaluation form and render to a customized form and save as PDF or print it out.", 
+        image: geosApp,
+        language: "REACT, Tailwind, Typescript", 
+        website: "https://main.geos-project.pages.dev/home/english/", 
+        github: "https://github.com/xsymmetry9/geos-project"}
 ];
 
 export default class Work{

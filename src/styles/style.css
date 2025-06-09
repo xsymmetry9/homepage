@@ -101,12 +101,7 @@
     max-width: 750px;
     width: 100%;
 }
-.about-description h2{
-    padding-bottom: 2rem;
-}
-.about-description p{
-    padding-bottom: 1.2rem;
-}
+
 .imageDescription-container{
     display: flex;
     justify-content: center;
@@ -148,18 +143,16 @@
 
 /*Skills */
 :root{
-    --total-brand: 12;
-    --logo-width: 12rem;
+    --total-brand: 9;
+    --logo-width: 4rem;
     --total-logo-width: calc(var(--total-brand) * var(--logo-width) * 2);
 }
 
-.skill-title{
-    text-align: center;
-}
 
 .slider{
     position: relative;
-    height: 20rem;
+    margin-top: 3rem;
+    height: auto;
     background-color: #fff;
     box-shadow: 0.8rem 1.4rem -.2rem #0001;
     
@@ -191,7 +184,7 @@
     width: var(--total-logo-width);
     display: flex;
 
-    animation: slideLeft 12s linear infinite;
+    animation: slideLeft 24s linear infinite;
 }
 .slider:hover ul.brands{
     animation-play-state: paused;
@@ -205,16 +198,15 @@
 
 ul.brands li.brand-logo{
     width: var(--logo-width);
-    font-size: 2rem;
+    font-size: 1.2rem;
     text-align: center;
     margin-left: 3rem
 }
 
-.skill-icon{
-    height: 100px;
-    /* margin: 0 30px; */
+.icon{
+    height: 80px;
+    width: 80px;
 }
-
 /* Work */
 
 .content{
