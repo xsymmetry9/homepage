@@ -1,8 +1,11 @@
+@import './base.css';
+
 :root{
     --font-heading: 'Poppins', sans-serif;
     --font-body: 'Roboto', sans-serif;
 
-    --color-text: #1f1f1f;
+    --color-text-light: var(--color-text-light);
+    --color-text-dark: var(--color-text-dark);
     --line-height-heading: 1.2;
     --line-height-body: 1.6;
 }
