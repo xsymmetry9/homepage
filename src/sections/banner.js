@@ -29,7 +29,7 @@ export default class Banner{
     }
 
     static subText = () =>{
-        const subtitle = "A web developer and an ESL teacher"
+        const subtitle = "A full-stack enthusiast."
         const text = document.createElement("p");
         text.classList.add("typeWriter", "subtitle");
         
