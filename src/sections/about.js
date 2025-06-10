@@ -1,5 +1,6 @@
 import plotSocialMediaIcons from "../components/socialMediaIcons";
-import profilePicture from "../assets/images/profile.png";
+// import profilePicture from "../assets/images/profile.png";
+import profilePicutreNoBg from "../assets/images/profile-nobg.png";
 
 export default class About{
     static load = () =>{
@@ -41,10 +42,16 @@ export default class About{
     }
 
     static loadImage = () =>{
+        const div = document.createElement("div");
+        div.classList.add("profile-image-container");
         const image = new Image();
-        image.src = profilePicture;
+        image.src = profilePicutreNoBg;
         image.alt = "A portrait for me";
         image.className = "profile-picture";
-        return image;
+        
+        div.appendChild(image);
+
+        return div;
+
     }
 }
