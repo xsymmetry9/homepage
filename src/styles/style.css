@@ -14,19 +14,19 @@
     align-items: center;
     margin-inline: auto;
     padding: 0;
-    background-color: var(--primary-bg-color-dark);
+    background-color: var(--bg-color);
 
 }
 /* Banner */
 .banner-title{
-    color: var(--primary-color-light);
+    color: var(--text-color);
     line-height: 1;
     font-size: 7rem;
     padding: 0 12px;
 }
 
 .subtitle{
-    color: var(--primary-color-light);
+    color: var(--text-color);
     font-size: 1.6rem;
     padding-top: 1.2rem;
 }
@@ -52,10 +52,10 @@
     cursor: pointer;
     height: 70px;
     width: 70px;
-    fill: var(--primary-color-light);
+    fill: var(--text-color);
     background: none;
-    border: 2px solid var(--primary-color-light);
-    border-radius: 8px;
+    border: 2px solid var(--text-color);
+    border-radius: 100%;
     animation: slidein ease-in-out .5s;
     margin-top: 7rem;
     transition: background-color ease-in 500ms,
@@ -72,14 +72,14 @@
 
 .banner-btn-nav-about:hover, .banner-btn-nav-about:focus{
     --color: rgb(0, 247, 255);
-    background-color: var(--color);
-    border: 3px solid var(--color);
-    fill: #000;
+    background-color: var(--color-cyan);
+    border: 3px solid var(--color-cyan);
+    fill: var(--text-color);
 }
 
 /* About */
 .section-container{
-    background-color: var(--primary-color-light);
+    background-color: var(--bg-color);
     width: 100%;
     display: block;
 }
@@ -88,7 +88,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: var(--primary-color-light);
+    background: var(--bg-color);
     height: 100vh;
 }
 
@@ -130,7 +130,7 @@
     height: 100%;
     width: 100%;
     z-index: -10;
-    background-color: var(--primary-color-dark);
+    background-color: var(--bg-color);
     clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 0% 95%);
 
 }
@@ -158,12 +158,20 @@
     --total-logo-width: calc(var(--total-brand) * var(--logo-width) * 2);
 }
 
-
+#skills{
+    background-color: var(--color-tertiary);
+    color: var(--color-dark);
+}
+[data-theme='dark'] {
+        #skills{
+        --text-color: var(--color-dark);
+        }
+}
 .slider{
     position: relative;
     margin-top: 3rem;
     height: auto;
-    background-color: #fff;
+    background-color: inherit;
     box-shadow: 0.8rem 1.4rem -.2rem #0001;
     
     display: flex;
@@ -219,6 +227,15 @@ ul.brands li.brand-logo{
 }
 /* Work */
 
+#work{
+    background-color: var(--color-tertiary);
+}
+
+[data-theme='dark'] {
+    #work{
+    --text-color: var(--color-dark);
+    }
+}
 .content{
     width: 100%;
     max-width: 1440px;
@@ -302,9 +319,8 @@ ul.brands li.brand-logo{
 /* Contact */
 
 #contact{
-    h1, h2, h3, h4, h5, p{
-        color: var(--primary-color-light);
-    }
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 .contact-flex{
     display: flex;
@@ -315,15 +331,11 @@ ul.brands li.brand-logo{
 
 .contact-container{
     --spacing-big: 3rem;
-    color: var(--primary-color-light);
     margin-top: var(--spacing-big);
     display: flex;
     gap: 12px;
 }
 
-.contact-title{
-    color: var(--primary-color-light);
-}
 @media (max-width: 55em)
 {
     .contact-container{

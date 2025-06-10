@@ -81,10 +81,26 @@ export default class Header{
             return container;
         }
 
+        //Color mode button
+        const colorModeBtn = () => {
+            const toggleButton = document.createElement("button");
+            toggleButton.textContent = "Color";
+
+            let isDark = false;
+
+            toggleButton.addEventListener(("click"), () => {
+                isDark = !isDark;
+                document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+            })
+
+            return toggleButton;
+        }
+
 
         headerContainer.appendChild(title("Go Gary!"));
         headerContainer.appendChild(menuButton());
         headerContainer.appendChild(navigation());
+        headerContainer.appendChild(colorModeBtn());
 
         element.appendChild(headerContainer);
     

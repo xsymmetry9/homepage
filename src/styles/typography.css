@@ -4,8 +4,6 @@
     --font-heading: 'Poppins', sans-serif;
     --font-body: 'Roboto', sans-serif;
 
-    --color-text-light: var(--color-text-light);
-    --color-text-dark: var(--color-text-dark);
     --line-height-heading: 1.2;
     --line-height-body: 1.6;
 }
@@ -13,7 +11,7 @@
 h1, h2, h3, h4, h5 {
     font-family: var(--font-heading);
     font-weight: 700;
-    color: var(--color-text);
+    color: var(--text-color);
     line-height: var(--line-height-heading);
     margin-bottom: 1rem;
 }
@@ -32,7 +30,7 @@ p {
     font-family: var(--font-body);
     line-height: var(--line-height-body);
     font-size: 1.1rem;
-    color: var(--color-text);
+    color: var(--text-color);
     margin-bottom: 1.25rem;
 }
 

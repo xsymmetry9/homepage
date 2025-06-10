@@ -10,7 +10,18 @@
     --button-color: var(--primary-bg-color-dark);
     --color-cyan: rgb(0, 247, 255);
 
+    --color-navy-blue: #1A2B49;
+    --color-lighter-blue: #273c63;
 
+    --color-dark: #222222;
+    --color-white: #fff;
+    --color-text: var(--color-dark);
+    --bg-color: var(--color-tertiary);
+
+}
+[data-theme='dark'] {
+    --bg-color: var(--color-dark);
+    --text-color: var(--color-white);
 }
 
 * {
