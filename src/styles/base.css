@@ -1,11 +1,16 @@
 :root {
     --primary-font: 'Poppins', sans-serif;
-    --primary-color-dark: #000;
-    --primary-color-light: #fff;
-    --primary-fc-dark: #000;
+    --primary-color-dark: #222222;
+    --secondary-color: #7b7b7b;
+    --color-tertiary: #F8F8F8;
+    --primary-color-light: var(--color-tertiary);
+    --primary-font-color-dark: #000;
+    --primary-font-color-light: #fff;
     --primary-bg-color-dark: var(--primary-color-dark);
     --button-color: var(--primary-bg-color-dark);
     --color-cyan: rgb(0, 247, 255);
+
+
 }
 
 * {
