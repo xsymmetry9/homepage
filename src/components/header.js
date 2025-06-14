@@ -1,3 +1,5 @@
+import websiteLogo from "../assets/images/light-logo.png";
+import websiteLogoDark from "../assets/images/dark-logo.png";
 export default class Header{
     static loadHeader = () =>{
         const element = document.createElement("header");
@@ -17,11 +19,18 @@ export default class Header{
         window.addEventListener("scroll", handleScroll);
     
         // Logo title
-        const title = (logoName) =>{
+        const title = () =>{
             const box = document.createElement("div");
             box.className = "title-logo";
-            box.innerHTML = `
-                <a href="/"><span>${logoName}</span></a>`;
+
+            const image = document.createElement("img");
+            image.className = "website-logo"
+            image.src = websiteLogo;
+            image.alt = "website-logo-light"
+
+            box.appendChild(image);
+            // box.innerHTML = `
+            //     <a href="/"><span>${logoName}</span></a>`;
             return box;
         }
 
@@ -84,13 +93,15 @@ export default class Header{
         //Color mode button
         const colorModeBtn = () => {
             const toggleButton = document.createElement("button");
-            toggleButton.textContent = "Color";
+            toggleButton.setAttribute("id", "theme-toggle");
+            toggleButton.textContent = "Toggle Theme";
 
             let isDark = false;
 
             toggleButton.addEventListener(("click"), () => {
                 isDark = !isDark;
                 document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+                console.log(document.documentElement.getAttribute("data-theme"));
             })
 
             return toggleButton;
