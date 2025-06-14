@@ -1,6 +1,5 @@
-import plotSocialMediaIcons from "../components/socialMediaIcons";
-// import profilePicture from "../assets/images/profile.png";
 import profilePicutreNoBg from "../assets/images/profile-nobg.png";
+import skillSection from "../sections/skills.js";
 
 export default class About{
     static load = () =>{
@@ -13,6 +12,8 @@ export default class About{
         imageDescription.appendChild(this.loadImage());
         imageDescription.appendChild(this.personalDescription());
         container.appendChild(imageDescription);
+
+        container.appendChild(skillSection.load());
         return container;
     }
 
@@ -35,7 +36,6 @@ export default class About{
 
         container.appendChild(title());
         container.appendChild(description());
-        container.appendChild(plotSocialMediaIcons("about"));
 
         return container;
   
