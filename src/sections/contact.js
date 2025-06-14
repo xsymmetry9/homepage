@@ -41,7 +41,7 @@ export default class Contact{
     static plotImage = () =>{
         const createDiv = document.createElement("div");
         const credited = document.createElement("p");
-    credited.innerHTML = `
+        credited.innerHTML = `
         Photo by 
         <a href="https://unsplash.com/@firmbee?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Firmbee.com</a> 
         on 
