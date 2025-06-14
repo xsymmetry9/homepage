@@ -5,6 +5,16 @@
 @import './utility.css';
 @import './footer.css';
 
+:root{
+    --total-brand: 9;
+    --logo-width: 4rem;
+    --total-logo-width: calc(var(--total-brand) * var(--logo-width) * 2);
+}
+.website-logo {
+    width: 100%;
+    height: auto;
+
+}
 /* Content */
 
 .content-container{
@@ -14,19 +24,19 @@
     align-items: center;
     margin-inline: auto;
     padding: 0;
-    background-color: var(--bg-color);
+    background-color: var(--color-beige-100);
 
 }
 /* Banner */
 .banner-title{
-    color: var(--text-color);
+    color: vr(--text-primary-color);
     line-height: 1;
     font-size: 7rem;
     padding: 0 12px;
 }
 
 .subtitle{
-    color: var(--text-color);
+    color: var(--text-primary-color);
     font-size: 1.6rem;
     padding-top: 1.2rem;
 }
@@ -38,7 +48,18 @@
         font-size: 1.2rem;
     }
 }
-.banner-container{
+.outer-banner-container{
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-color-primary);
+
+}
+.inner-banner-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,21 +68,43 @@
     max-width: 1440px;
     width: 100%;
 }
+.outer-banner-container::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 100%;
+    height: 30%;
+    width: 100%;
+    z-index: -10;
+    background-color: var(--bg-color-primary);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 35%, 0% 75%);
+}
+
 .banner-btn-nav-about
 {
     cursor: pointer;
     height: 70px;
     width: 70px;
-    fill: var(--text-color);
+    fill: var(--button-arrow-down);
     background: none;
-    border: 2px solid var(--text-color);
-    border-radius: 100%;
+    border: 1px solid var(--button-arrow-down);
+    border-radius: 50%;
+    /* box-shadow: 1px 1px 4px 2px var(--color-opacity); */
     animation: slidein ease-in-out .5s;
     margin-top: 7rem;
     transition: background-color ease-in 500ms,
                 fill ease-in 500ms,
                 border ease-in 500ms;
 
+}
+
+#theme-toggle{
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 1rem;
 }
 @keyframes slidein{
 
@@ -74,102 +117,100 @@
     --color: rgb(0, 247, 255);
     background-color: var(--color-cyan);
     border: 3px solid var(--color-cyan);
+    box-shadow: 1px 1px 4px 2px rgba(0, 247, 255, 0.3);
     fill: var(--text-color);
 }
 
 /* About */
 .section-container{
-    background-color: var(--bg-color);
+    margin-top: 3rem;
     width: 100%;
     display: block;
 }
 .about-background{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: var(--bg-color);
-    height: 100vh;
+    background: var(--color-beige-100);
+    /* height: 100vh; */
 }
-
+.profile-image-container, .about-description{
+    z-index: 10;
+}
 .profile-image-container{
-    background-color: red;
     width: 400px;
     height: 400px;
     border-radius: 100%;
+    border: 3px solid;
+    border-color: rgba(0,0,0,.3);
     overflow: hidden;
     background-color: var(--color-tertiary);
 }
+@media (max-width: 55em){
+    .profile-image-container{
+        width: 200px;
+        height: 200px;
+    }
+    .imageDescription-container{
+        margin-top: 3rem;
+    }
+}
 .about-description{
-    background-color: var(--primary-color-light);
+    box-sizing: border-box;
+    background-color: var(--color-tertiary);
     padding: 3rem 1.2rem;
-    border: 1px solid var(--primary-color-dark);
     border-radius: 8px;
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.15); /* Soft white */    
+    box-shadow: 0px 0px 1px 2px rgba(55, 55, 55, 0.3); /* Soft white */    
     max-width: 600px;
     height: auto;
     width: 100%;
+
+    p{
+        color: var(--color-dark);
+    }
+}
+
+.about-description > p, .about-description > h2{
+    color: var(--color-dark);
 }
 
 .imageDescription-container{
+    box-sizing: border-box;
     display: flex;
-    justify-content: center;
-    max-width: 1440px;
+    justify-content: space-between;
+    max-width: 1100px;
     width: 100%;
     align-items: center;
     margin-inline: auto;
-    margin-top: 3rem;
-    padding-bottom: 3rem;
+    padding-bottom: 0 3rem;
     gap: 30px;
     z-index: 0;
     
 }
-.imageDescription-container::before{
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: -10;
-    background-color: var(--bg-color);
-    clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 0% 95%);
 
-}
 
-@media (max-width: 55em) {
-    .imageDescription-container{
-        flex-wrap: wrap;
-
-    }
-}
 .profile-picture{
     width: 100%;
     max-width: 400px;
     height: auto;
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.15); /* Soft white */
 }
-#about .social-media-icons-container{
-    justify-content: flex-end;
+
+
+@media (max-width: 55em) {
+    .imageDescription-container{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 /*Skills */
-:root{
-    --total-brand: 9;
-    --logo-width: 4rem;
-    --total-logo-width: calc(var(--total-brand) * var(--logo-width) * 2);
-}
+
 
 #skills{
-    background-color: var(--color-tertiary);
+    margin-top: 5rem;
+    background-color: var(--color-beige-100);
     color: var(--color-dark);
-}
-[data-theme='dark'] {
-        #skills{
-        --text-color: var(--color-dark);
-        }
 }
 .slider{
     position: relative;
-    margin-top: 3rem;
     height: auto;
     background-color: inherit;
     box-shadow: 0.8rem 1.4rem -.2rem #0001;
@@ -190,11 +231,11 @@
 }
 .slider::before{
     left: 0;
-    background: linear-gradient(to right, #fff 0%,#0000 100%);
+    background: linear-gradient(to right, var(--color-tertiary) 0%,#0000 100%);
 }
 .slider::after{
     right: 0;
-    background: linear-gradient(to left, #fff 0%,#0000 100%);
+    background: linear-gradient(to left, var(--color-tertiary) 0%,#0000 100%);
 }
 
 .slider ul.brands{
@@ -228,14 +269,13 @@ ul.brands li.brand-logo{
 /* Work */
 
 #work{
-    background-color: var(--color-tertiary);
+    background-color: var(--color-beige-100);
 }
 
-[data-theme='dark'] {
-    #work{
-    --text-color: var(--color-dark);
-    }
+.work-title {
+    color: var(--color-dark);
 }
+
 .content{
     width: 100%;
     max-width: 1440px;
@@ -286,10 +326,12 @@ ul.brands li.brand-logo{
     --spacing: 1.2rem;
     font-size: 1.8rem;
     padding-bottom: var(--spacing);
+    color: var(--color-dark);
 }
 
 .project-cards{
     /* background-color: #1a1a1a; */
+    z-index: 10;
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
@@ -304,7 +346,7 @@ ul.brands li.brand-logo{
 .project-image{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .project-bottom{
     border-top: 3px solid black;
@@ -312,6 +354,7 @@ ul.brands li.brand-logo{
 
 }
 .project-description{
+    color: var(--color-dark);
     font-size: .9rem;
     line-height: 1.5;
 }
@@ -319,21 +362,31 @@ ul.brands li.brand-logo{
 /* Contact */
 
 #contact{
-    background-color: var(--bg-color);
+    position: relative;
+    background-color: var(--bg-color-primary);
     color: var(--text-color);
+    width: 100%;
 }
-.contact-flex{
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    padding-bottom: .3rem;
+#contact::before{
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    height: 30vh;
+    width: 100%;
+    z-index: 1;
+    background-color: var(--bg-color-primary);
+    clip-path: polygon(0% 0%, 100% 25%, 100% 100%, 0% 100%);
 }
 
 .contact-container{
     --spacing-big: 3rem;
+    z-index: 10;
     margin-top: var(--spacing-big);
+    max-width: 1100px;
+    width: 100%;
+    margin-inline: auto;
     display: flex;
-    gap: 12px;
+    padding-bottom: 3rem;
 }
 
 @media (max-width: 55em)
@@ -343,6 +396,14 @@ ul.brands li.brand-logo{
     }
 }
 
+.contact-flex{
+    display: flex;
+    gap: 8px;
+}
+
+.contact-flex > svg{
+    fill: var(--text-primary-color);
+}
 .contact-image{
     max-width: 700px;
     width: 100%;
@@ -372,7 +433,7 @@ ul.brands li.brand-logo{
 
 .social-media-links{
     text-decoration: none;
-    color: inherit;
+    color: var(--text-primary-color);
 }
 
 .left-container{
