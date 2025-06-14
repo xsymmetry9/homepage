@@ -1,5 +1,6 @@
 import websiteLogo from "../assets/images/light-logo.png";
-import websiteLogoDark from "../assets/images/dark-logo.png";
+import darkLightModeButton from "./darkLightModeButton";
+
 export default class Header{
     static loadHeader = () =>{
         const element = document.createElement("header");
@@ -90,28 +91,9 @@ export default class Header{
             return container;
         }
 
-        //Color mode button
-        const colorModeBtn = () => {
-            const toggleButton = document.createElement("button");
-            toggleButton.setAttribute("id", "theme-toggle");
-            toggleButton.textContent = "Toggle Theme";
-
-            let isDark = false;
-
-            toggleButton.addEventListener(("click"), () => {
-                isDark = !isDark;
-                document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
-                console.log(document.documentElement.getAttribute("data-theme"));
-            })
-
-            return toggleButton;
-        }
-
-
         headerContainer.appendChild(title("Go Gary!"));
         headerContainer.appendChild(menuButton());
         headerContainer.appendChild(navigation());
-        headerContainer.appendChild(colorModeBtn());
 
         element.appendChild(headerContainer);
     
