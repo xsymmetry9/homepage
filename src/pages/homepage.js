@@ -29,6 +29,7 @@ export default class HomePage {
         content.appendChild(darkLightModeButton());
 
 
+
         return content;
 
     }
