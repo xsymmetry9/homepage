@@ -40,12 +40,23 @@ export default class Contact{
 
     static plotImage = () =>{
         const createDiv = document.createElement("div");
-
+        const credited = document.createElement("p");
+    credited.innerHTML = `
+        Photo by 
+        <a href="https://unsplash.com/@firmbee?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Firmbee.com</a> 
+        on 
+        <a href="https://unsplash.com/photos/woman-holding-silver-iphone-6-SpVHcbuKi6E?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Unsplash</a>
+    `;
+      
         const image = new Image();
         image.classList.add("contact-image");
         image.src = contactImg;
+        image.alt = "A hand holding a phone"
 
         createDiv.appendChild(image);
+        createDiv.appendChild(credited);
+
+
 
         return createDiv;
     }
