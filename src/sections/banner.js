@@ -2,24 +2,29 @@ import { typeWriter } from "../components/typewriter";
 
 export default class Banner{
     static load = () =>{
-        const container = document.createElement("div");
-        container.classList.add("banner-container");
+        const createOuterLayer = document.createElement("div");
+        createOuterLayer.classList.add("outer-banner-container");
+
+        const createInnerLayer = document.createElement("div");
+        createInnerLayer.classList.add("inner-banner-container");
 
         setTimeout(() =>{
-            container.appendChild(this.title())
+            createInnerLayer.appendChild(this.title())
         }, 500);
         setTimeout(() =>{
-            container.appendChild(this.subText());
+            createInnerLayer.appendChild(this.subText());
         }, 3000);
         setTimeout(() =>{
-            container.appendChild(this.bannerHandlerBtn());
+            createInnerLayer.appendChild(this.bannerHandlerBtn());
         }, 7000);
 
-        return container;
+        createOuterLayer.appendChild(createInnerLayer);
+
+        return createOuterLayer;
     }
 
     static title = () =>{
-        const title = "Hi, my name is Gary";
+        const title = "Hi, I'm Gary";
         const titleText = document.createElement("h1");
         titleText.className = "banner-title";
 
