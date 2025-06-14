@@ -10,6 +10,45 @@
     --button-color: var(--primary-bg-color-dark);
     --color-cyan: rgb(0, 247, 255);
 
+    --color-navy-blue: #1A2B49;
+    --color-lighter-blue: #273c63;
+
+    --color-dark: #222222;
+    --color-white: #fff;
+
+    --color-beige-100: #f9f2e7;
+    --color-beige-200: #f1e3cd;
+    --color-beige-300: #e6cfae; /* base */
+    --color-beige-400: #d4b991;
+    --color-beige-500: #c0a273;
+    --color-beige-600: #a98758;
+    --color-beige-700: #8f6e43;
+    --color-beige-800: #755836;
+    --color-beige-900: #5c4428;
+
+    --text-primary-color:  #3a2f1d;
+    --text-secondary-color: var(--color-white);
+    --bg-color-primary: var(--color-beige-300);
+    --bg-color-secondary: var(--color-dark);
+
+    --button-arrow-down: #3a2f1d;
+    --button-arrow-down-hover: #3a2f1d;
+    --button-arrow-down-text: #3a2f1d;
+
+
+}
+[data-theme='dark'] {
+    --text-primary-color: var(--color-white);
+    --text-secondary-color: var(--color-dark);
+
+    --bg-color-primary: var(--color-dark);
+    --bg-color-secondary: var(--color-tertiary);
+
+    --button-arrow-down: var(--color-tertiary);
+    --button-arrow-down-hover: #3a2f1d;
+    --button-arrow-down-text: #3a2f1d;
+
+
 
 }
 
@@ -24,6 +63,6 @@ html {
 }
 
 body {
-    background-color: var(--primary-color-light);
+    background-color: var(--bg-color-primary);
     font-family: var(--primary-font);
 }

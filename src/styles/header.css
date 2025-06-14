@@ -1,8 +1,9 @@
 header {
     position: absolute;
+    z-index: 100;
     top: 3rem;
     width: 100%;
-    background: rgba(25, 25, 25, 0.3);
+    background: rgba(25, 25, 25, 0.7);
 }
 
 .header-container {
@@ -16,13 +17,15 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-inline: auto;
-    height: 70px;
 }
-.title-logo a {
-    color: var(--primary-color-light);
+.title-logo {
+    height: auto;
+    /* border: 1px solid black; */
+    width: 75px;
     margin-left: 1.2rem;
-    font-weight: 700;
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 @media (max-width: 55em) {
@@ -34,10 +37,9 @@ header {
     .header-container {
         flex-direction: column;
         align-items: normal;
-        background: rgba(25, 25, 25, 0.7);
     }
+}
 
-    .title-logo {
-        margin-top: 22.5px;
-    }
+button{
+    cursor: pointer;
 }

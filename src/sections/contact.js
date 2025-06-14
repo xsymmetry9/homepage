@@ -2,12 +2,18 @@
 import plotSocialMediaIcons from "../components/socialMediaIcons";
 import contactImg from "../assets/images/contact.jpg";
 
+const contact = {
+    address: "Taipei, Taiwan", 
+    phone: "555-555-5555", 
+    email: "g123456@mail.com"};
+
 export default class Contact{
     static load = () =>{
-        const contact = {address: "1234 Smith Street Miami, Florida 33156", phone: "555-555-5555", email: "g123456@mail.com"};
+        const section = document.createElement("section");
+        section.setAttribute("id", "contact");
+
         const container = document.createElement("div");
         container.classList.add("contact-container");
-        container.setAttribute("id", "contact");
   
         const left = document.createElement("div");
         left.classList.add("left-container");
@@ -20,7 +26,9 @@ export default class Contact{
         
         container.appendChild(left);
         container.appendChild(right);
-        return container;
+
+        section.appendChild(container);
+        return section;
     }
 
     static title = () =>{
@@ -32,12 +40,23 @@ export default class Contact{
 
     static plotImage = () =>{
         const createDiv = document.createElement("div");
-
+        const credited = document.createElement("p");
+        credited.innerHTML = `
+        Photo by 
+        <a href="https://unsplash.com/@firmbee?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Firmbee.com</a> 
+        on 
+        <a href="https://unsplash.com/photos/woman-holding-silver-iphone-6-SpVHcbuKi6E?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer">Unsplash</a>
+    `;
+      
         const image = new Image();
         image.classList.add("contact-image");
         image.src = contactImg;
+        image.alt = "A hand holding a phone"
 
         createDiv.appendChild(image);
+        createDiv.appendChild(credited);
+
+
 
         return createDiv;
     }

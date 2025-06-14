@@ -1,3 +1,6 @@
+import websiteLogo from "../assets/images/light-logo.png";
+import darkLightModeButton from "./darkLightModeButton";
+
 export default class Header{
     static loadHeader = () =>{
         const element = document.createElement("header");
@@ -17,11 +20,18 @@ export default class Header{
         window.addEventListener("scroll", handleScroll);
     
         // Logo title
-        const title = (logoName) =>{
+        const title = () =>{
             const box = document.createElement("div");
             box.className = "title-logo";
-            box.innerHTML = `
-                <a href="/"><span>${logoName}</span></a>`;
+
+            const image = document.createElement("img");
+            image.className = "website-logo"
+            image.src = websiteLogo;
+            image.alt = "website-logo-light"
+
+            box.appendChild(image);
+            // box.innerHTML = `
+            //     <a href="/"><span>${logoName}</span></a>`;
             return box;
         }
 
@@ -80,7 +90,6 @@ export default class Header{
             container.appendChild(lists());
             return container;
         }
-
 
         headerContainer.appendChild(title("Go Gary!"));
         headerContainer.appendChild(menuButton());

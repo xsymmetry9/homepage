@@ -8,7 +8,6 @@ import postmanIcon from "../assets/icons/postman-icon.svg";
 import reactIcon from "../assets/icons/react-icon.svg";
 import tsIcon from "../assets/icons/ts-icon.svg";
 
-//Not the best practice
 const icons = [
     {name: "Bootstrap", link: bootStrapIcon},
     {name: "CSS", link: cssIcon},
@@ -22,7 +21,7 @@ const icons = [
 
 ];
 
-export default class Skills{
+export default class skillSection{
     static load = () =>{
         const container = document.createElement("div");
         container.classList.add("section-container");
@@ -31,19 +30,10 @@ export default class Skills{
         const content = document.createElement("div");
         content.className = "content";
 
-        content.appendChild(this.title());
         content.appendChild(this.slider());
 
         container.appendChild(content);
         return container;
-    }
-
-    static title = () =>{
-        const title = document.createElement("h2");
-        title.classList.add("skill-title");
-        title.textContent = "My Skills";
-
-        return title;
     }
 
     static slider = () =>{

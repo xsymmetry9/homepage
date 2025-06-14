@@ -3,9 +3,9 @@ import footer from '../components/footer.js';
 import banner from "../sections/banner.js";
 import work from "../sections/work.js";
 import about from "../sections/about.js";
-import skills from "../sections/skills.js";
 import contact from "../sections/contact.js";
 import eventHandlers from "../components/eventHandlers.js";
+import darkLightModeButton from "../components/darkLightModeButton.js";
 
 export default class HomePage {
     static loadPage = () =>{
@@ -24,9 +24,11 @@ export default class HomePage {
 
         content.appendChild(banner.load());
         content.appendChild(about.load());
-        content.appendChild(skills.load());
         content.appendChild(work.load());
         content.appendChild(contact.load());
+        content.appendChild(darkLightModeButton());
+
+
 
         return content;
 
